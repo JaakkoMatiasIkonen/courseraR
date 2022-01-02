@@ -30,3 +30,10 @@ cacheSolve <- function(x, ...) { ##receiving cache data
   x$set_inv(inverse)
   inverse ##returns the inverse of the matrix
 }
+
+##EXAMPLE##
+gmatrix <- makeCacheMatrix(matrix(1:4, nrow=2, ncol=2)) ##gen 2x2 matrix
+gmatrix$get() 
+gmatrix$get_inv()
+cacheSolve(gmatrix) # inverse!
+cacheSolve(gmatrix) # as the matrix remains the same, cacheSolve retrieves the inverse from the cache!
