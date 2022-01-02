@@ -19,14 +19,14 @@ makeCacheMatrix <- function(x = matrix()) {
 ## (as calculated by makeCacheMatrix earlier)
 ## and calculates its matrix
 
-cacheSolve <- function(x, ...) {
+cacheSolve <- function(x, ...) { ##receiving cache data
   inverse <- x$get_inv()
   if(!is.null(inverse)){
-    message("receiving cache data")
-    return(inverse)
+    message("receiving cache data") ## checking whether the inverse is null
+    return(inverse) 
   }
   matrix <- x$get()
   inverse <- solve(matrix, ...)
   x$set_inv(inverse)
-  inverse 
+  inverse ##returns the inverse of the matrix
 }
